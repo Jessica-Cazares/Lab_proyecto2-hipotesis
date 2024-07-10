@@ -205,12 +205,151 @@ Los valores de correlación de 0.6077 (Spotify vs Deezer), 0.5527 (Spotify vs Ap
 4. Coeficiente: 1.4310541598256816
 
 * __Interpretación:__
+  
 1. El MSE de 1976.86 es un valor alto lo que indica que no hay un buen ajuste del modelo a los datos.
 2. Un R² de 0.2497 indica que aproximadamente el 24.97% de los datos se pueden predecir por el modelo de regresión lineal.
 3. Intercepción cuando la variable independiente es 0, el modelo predice que la variable dependiente será aproximadamente 34.85.
 4. Coeficiente, sugiere una relación positiva, una mayor posición en spotify está asociado con una mayor posición en deezer.
    
-*__Conclusión:__ Se válida la hipótesis inicial, pero la relación es débil como para ser un buen predictor por sí solo.
+* __Conclusión:__ Se válida la hipótesis inicial, pero la relación es débil como para ser un buen predictor por sí solo.
+
+* __Regresión lineal__
+  
+* Spotify vs Shazam
+  
+1. Error cuadrático medio (MSE): 14735.855116718994
+2. Coeficiente de determinación (R^2): 0.44691000277096626
+3. Intercepción: -0.8709355811230566
+4. Coeficiente: 4.905546289495083
+
+* __Interpretación:__
+
+1. El MSE de 14735.86 sugiere que aunque el modelo hace un trabajo razonable prediciendo "charts in Spotify", hay un margen considerable de error. 
+2. El R² de 0.45 indica que hay una relación moderada, lo que sugiere que charts in Spotify es un predictor razonable del éxito en los charts de Shazam, pero hay otros factores importantes que también influyen.
+3. El coeficiente positivo de 4.91 confirma que, en general, un mejor desempeño en los charts in spotify está asociado con un mejor desempeño en los charts in Shazam.
+
+*__Conclusión:__ Se válida la hipótesis inicial.
+
+__Hipótesis 3: La presencia de una canción con un mayor número de playlists se relaciona con un mayor número de streams.__
+
+*__Correlación__ 
+* r=0.7836803010789
+  
+* __Interpretación:__
+Un valor de r indica una fuerte relación positiva. Esto sugiere que hay una relación considerablemente fuerte entre el número de playlists en las que aparece una canción y el número de streams que recibe.
+
+* __Regresión lineal__
+  
+1. Error cuadrático medio (MSE): 1.275849895855914e+17
+2. Coeficiente de determinación (R^2): 0.5997973331266275
+3. Intercepción: 231242214.05101973
+4. Coeficiente: 48560.98322485796
+
+*__Interpretación:__
+
+Los resultados sugieren que hay una relación positiva entre el número de playlists en las que aparece una canción y el número de streams que recibe. Aunque el R2 de 0.6 indica que esta relación explica una parte significativa de la variación en los streams, el MSE elevado muestra que hay otros factores no incluidos en el modelo que también influyen en el número de streams. Aún así, el coeficiente positivo y significativo refuerza la idea de que estar en más playlists se asocia con más streams
+
+*__Conclusión:__ Se válida la hipótesis inicial.
+
+__Hipótesis 4: Los artistas con un mayor número de canciones en Spotify tienen más streams.__
+
+*__Correlación__ 
+* r=0.80016684593280
+  
+* __Interpretación:__
+El valor de r indica una correlación positiva fuerte por lo que es muy probable que los artistas con más canciones en Spotify tiendan a tener un mayor número de streams. Lo que sugiere que la cantidad de contenido que un artista tiene en la plataforma está estrechamente vinculada con su popularidad en términos de streams.
+
+*__Regresión lineal__
+
+1. Error cuadrático medio (MSE): 1.377236569956644e+18
+2. Coeficiente de determinación (R^2): 0.7537531924491054
+3. Intercepción: 194858748.11261463
+4. Coeficiente: 453769865.76784766
+
+*__Interpretación:__
+
+Los resultados sugieren una relación positiva y fuerte entre el número de canciones de un artista en Spotify y el número de streams que recibe. Aunque el MSE elevado indica que hay otros factores que también influyen en el número de streams y no están incluidos en el modelo, el R2 de 0.75 muestra que una gran parte de la variación en los streams puede ser explicada por el número de canciones. El coeficiente positivo y significativo refuerza la hipótesis de que los artistas con más canciones tienden a tener más streams.
+
+*__Conclusión:__ Se válida la hipótesis inicial.
+
+__Hipótesis 5: Las características de la música influyen en el éxito en términos de cantidad de streams en spotify.__
+
+* __Correlación__ 
+* _Danceability:_ r= -0.10563589955055
+* _Speechiness:_ r= -0.112773935150
+
+* __Interpretación:__
+Los valores de r indican una relación negativa muy débil. La relación inversa es mínima, a medida que aumenta danceability y speechiness, la otra variable tiende a disminuir ligeramente.
+
+* __Correlación:__
+* _Valence:_ r=-0.041797954869
+* _Energy:_ r= -0.0257381767548
+* _Acousticness:_ r=-0.00498576864
+* _Instrumentalness:_ r=-0.0440399854154
+* _Liveness:_ r=-0.051147025245
+
+* __Interpretación:__
+Para todas las características anteriores:
+La dirección de la relación es inversa (negativa) en todos los casos.
+La fuerza de la relación es extremadamente débil en todos los casos, con valores muy cercanos a 0, prácticamente no hay una relación lineal observable.
+No hay una relación significativa entre Valence, Energy, Acousticness, Instrumentalness, y Liveness vs streams.
+
+* __Interpretación regresión lineal para todas las características:__
+  
+La hipótesis de que las características de la música influyen en el éxito en términos de cantidad de streams en Spotify no se sostiene. El modelo muestra que tienen un impacto mínimo y, de hecho, parecen tener una relación negativa con la cantidad de streams. Además, la alta magnitud del MSE y el bajo R² indican que el modelo no es adecuado para predecir el éxito en términos de streams basándose en las características.
+
+* __Conclusión:__ Se refuta la hipótesis inicial.
+
+* __Regresión lineal Danceability:__
+
+1. Error cuadrático medio (MSE): 3.124828603648244e+17
+2. Coeficiente de determinación (R^2): 0.01981828366786642
+3. Intercepción: 754197652.8166625
+4. Coeficiente: -3561913.4172532973
+
+* __Regresión lineal Speechiness:__
+
+1. Error cuadrático medio (MSE): 3.1839496713280416e+17
+2. Coeficiente de determinación (R^2): 0.0012734618744032478
+3. Intercepción: 586839521.0596712
+4. Coeficiente: -7004805.666278839
+
+* __Regresión lineal Acousticness:__
+
+1. Error cuadrático medio (MSE): 3.1889904031590746e+17
+2. Coeficiente de determinación (R^2): -0.000307691463716786
+3. Intercepción: 519052870.0753346
+4. Coeficiente: -101639.24942977371
+
+* __Regresión lineal Energy:__
+
+1. Error cuadrático medio (MSE): 3.191199432101503e+17
+2. Coeficiente de determinación (R^2): -0.0010006093977401598
+3. Intercepción: 584343722.8663057
+4. Coeficiente: -1060671.6164008593
+
+* __Regresión lineal Instrumentalness:__
+
+1. Error cuadrático medio (MSE): 3.186896882065557e+17
+2. Coeficiente de determinación (R^2): 0.0003489945049873766
+3. Intercepción: 521574809.3676341
+4. Coeficiente: -3009595.266891558
+
+* __Regresión lineal Liveness:__
+  
+1. Error cuadrático medio (MSE): 3.167159734862173e+17
+2. Coeficiente de determinación (R^2): 0.006540051127653657
+3. Intercepción: 542243879.0230006
+4. Coeficiente: -1424267.01610165
+
+* __Regresión lineal Valence:__
+
+1. Error cuadrático medio (MSE): 3.182035009291737e+17
+2. Coeficiente de determinación (R^2): 0.00187404416514092
+3. Intercepción: 566138289.9384496
+4. Coeficiente: -971945.7250246599
+
+
 
 ## Recomendaciones
 
