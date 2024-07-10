@@ -228,11 +228,11 @@ Los valores de correlación de 0.6077 (Spotify vs Deezer), 0.5527 (Spotify vs Ap
 2. El R² de 0.45 indica que hay una relación moderada, lo que sugiere que charts in Spotify es un predictor razonable del éxito en los charts de Shazam, pero hay otros factores importantes que también influyen.
 3. El coeficiente positivo de 4.91 confirma que, en general, un mejor desempeño en los charts in spotify está asociado con un mejor desempeño en los charts in Shazam.
 
-*__Conclusión:__ Se válida la hipótesis inicial.
+* __Conclusión:__ Se válida la hipótesis inicial.
 
 __Hipótesis 3: La presencia de una canción con un mayor número de playlists se relaciona con un mayor número de streams.__
 
-*__Correlación__ 
+* __Correlación__ 
 * r=0.7836803010789
   
 * __Interpretación:__
@@ -245,32 +245,32 @@ Un valor de r indica una fuerte relación positiva. Esto sugiere que hay una rel
 3. Intercepción: 231242214.05101973
 4. Coeficiente: 48560.98322485796
 
-*__Interpretación:__
+* __Interpretación:__
 
 Los resultados sugieren que hay una relación positiva entre el número de playlists en las que aparece una canción y el número de streams que recibe. Aunque el R2 de 0.6 indica que esta relación explica una parte significativa de la variación en los streams, el MSE elevado muestra que hay otros factores no incluidos en el modelo que también influyen en el número de streams. Aún así, el coeficiente positivo y significativo refuerza la idea de que estar en más playlists se asocia con más streams
 
-*__Conclusión:__ Se válida la hipótesis inicial.
+* __Conclusión:__ Se válida la hipótesis inicial.
 
 __Hipótesis 4: Los artistas con un mayor número de canciones en Spotify tienen más streams.__
 
-*__Correlación__ 
+* __Correlación__ 
 * r=0.80016684593280
   
 * __Interpretación:__
 El valor de r indica una correlación positiva fuerte por lo que es muy probable que los artistas con más canciones en Spotify tiendan a tener un mayor número de streams. Lo que sugiere que la cantidad de contenido que un artista tiene en la plataforma está estrechamente vinculada con su popularidad en términos de streams.
 
-*__Regresión lineal__
+* __Regresión lineal__
 
 1. Error cuadrático medio (MSE): 1.377236569956644e+18
 2. Coeficiente de determinación (R^2): 0.7537531924491054
 3. Intercepción: 194858748.11261463
 4. Coeficiente: 453769865.76784766
 
-*__Interpretación:__
+* __Interpretación:__
 
 Los resultados sugieren una relación positiva y fuerte entre el número de canciones de un artista en Spotify y el número de streams que recibe. Aunque el MSE elevado indica que hay otros factores que también influyen en el número de streams y no están incluidos en el modelo, el R2 de 0.75 muestra que una gran parte de la variación en los streams puede ser explicada por el número de canciones. El coeficiente positivo y significativo refuerza la hipótesis de que los artistas con más canciones tienden a tener más streams.
 
-*__Conclusión:__ Se válida la hipótesis inicial.
+* __Conclusión:__ Se válida la hipótesis inicial.
 
 __Hipótesis 5: Las características de la música influyen en el éxito en términos de cantidad de streams en spotify.__
 
