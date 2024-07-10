@@ -29,34 +29,43 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
   5. Las características de la música influyen en el éxito en términos de cantidad de streams en Spotify.
 
 ## Herramientas
+
 * BigQuery
 * Power BI
 * Google Docs
 * Google Slide
 
 ## Lenguajes
+
 * SQL en BigQuery
 * Python en Google Colab
 
 ## Procesamiento
+
   1. Conectar/importar datos a herramientas
-* Se creó el proyecto2-hipotesis-lab y el conjunto de datos Dataset en BigQuery.
-* Tablas importadas: track_in_competition, track_in_spotify, track_technical_info
+    * Se creó el proyecto2-hipotesis-lab y el conjunto de datos Dataset en BigQuery.
+    * Tablas importadas: track_in_competition, track_in_spotify, track_technical_info
+
   2. Identificar y manejar valores nulos
-Se identifican valores nulos a través de comandos SQL COUNT, WHERE y IS NULL.
-track_in_competition: 50 valores nulos en la columna in_shazam_charts.
-track_in_spotify: 0 nulos.
-track_technical_info: 95 valores nulos en la columna key.
-Identificar y manejar valores duplicados
-Se identifican duplicados a través de comandos SQL COUNT, GROUP BY, HAVING.
-track_in_competition: no hay valores duplicados.
-track_in_spotify: 4 track_name duplicadas con diferentes track_id. Para el análisis de datos no se consideró la información de estos track_name porque no hay certeza de cuáles datos son correctos, al ser 4 canciones no impacta en el resultado. La muestra total contiene 952 datos y se consideraron solo 944.
-track_technical_info: no hay valores duplicados.
-Identificar y manejar datos fuera del alcance del análisis
-Se manejan variables que no son útiles para el análisis a través de comandos SQL SELECT EXCEPT.
-track_tecnical_info: se excluyó la columna key por tener muchos datos nulos (95) y la columna mode por no tener información relevante para el análisis.
-Identificar y manejar datos discrepantes en variables categóricas
-Se identifican datos discrepantes utilizando el comandos de manejo de string, como REGEXP.
+    * Se identifican valores nulos a través de comandos SQL COUNT, WHERE y IS NULL.
+    * track_in_competition: 50 valores nulos en la columna in_shazam_charts.
+    * track_in_spotify: 0 nulos.
+    * track_technical_info: 95 valores nulos en la columna key.
+  
+  3. Identificar y manejar valores duplicados
+    * Se identifican duplicados a través de comandos SQL COUNT, GROUP BY, HAVING.
+    * track_in_competition: no hay valores duplicados.
+    * track_in_spotify: 4 track_name duplicadas con diferentes track_id.
+     Para este análisis no se consideró la información de estos track_name porque no hay certeza de cuáles datos son correctos.
+     La muestra total contiene 952 datos y se consideraron solo 944.
+    * track_technical_info: no hay valores duplicados.
+  
+  4. Identificar y manejar datos fuera del alcance del análisis
+    * Se manejan variables que no son útiles para el análisis a través de comandos SQL SELECT EXCEPT.
+    * track_tecnical_info: se excluyó la columna key por tener muchos datos nulos (95) y la columna mode por no tener información relevante para el análisis.
+
+  5. Identificar y manejar datos discrepantes en variables categóricas
+* Se identifican datos discrepantes utilizando el comandos de manejo de string, como REGEXP.
 track_in_spotify: Se reemplazaron por espacios vacíos los caracteres especiales de los track_name y artist_s__name , se creó una nueva columna track_name_limpio y artist_s__name_limpio.
 Identificar y manejar datos discrepantes en variables numéricas
 Se identifican datos discrepantes utilizando comandos como MAX, MIN y AVG para las variables numéricas de interés para el estudio de cada base de datos.
