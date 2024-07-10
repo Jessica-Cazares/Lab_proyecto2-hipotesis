@@ -152,17 +152,17 @@ __Hipótesis 1: Las canciones con un mayor BPM (Beats Por Minuto) tienen más é
 
 * Regresión lineal
   
-  1.Error cuadrático medio (MSE): 3.1890603295274906e+17
-  2.Coeficiente de determinación (R^2): -0.0003296256420366461
+  1. Error cuadrático medio (MSE): 3.1890603295274906e+17
+  2. Coeficiente de determinación (R^2): -0.0003296256420366461
   3. Intercepción: 518079372.14366764
   4. Coeficiente: -14448.855151167847
 
 * Interpretación:
-  
-1.Un MSE tan grande sugiere que las predicciones están muy lejos de los valores reales, indica un mal ajuste del modelo.
-2.Un R² negativo indica que el modelo no tiene poder predictivo.
-3.Intercepción: Este es el valor de streams cuando el bpm es 0.
-4.Coeficiente: Este coeficiente indica que por cada incremento unitario en bpm, los streams disminuyen en promedio aproximadamente 14448.85 unidades. Dado que esto no parece razonable y el R² es negativo, esto también sugiere que el modelo no es adecuado.
+
+  1. Un MSE tan grande sugiere que las predicciones están muy lejos de los valores reales, indica un mal ajuste del modelo.
+  2. Un R² negativo indica que el modelo no tiene poder predictivo.
+  3. Intercepción: Este es el valor de streams cuando el bpm es 0.
+  4. Coeficiente: Este coeficiente indica que por cada incremento unitario en bpm, los streams disminuyen en promedio aproximadamente 14448.85 unidades. Dado que esto no parece razonable y el R² es negativo, esto también sugiere que el modelo no es adecuado.
 
 * __Conclusión:__ Se refuta la hipótesis inicial.
 
