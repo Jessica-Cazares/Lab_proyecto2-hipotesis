@@ -153,16 +153,18 @@ __Hipótesis 1: Las canciones con un mayor BPM (Beats Por Minuto) tienen más é
 El valor de r es muy cercana a 0, lo que indica que no hay una relación lineal significativa entre las dos variables. El signo negativo indica que, si existiera alguna relación, sería una relación negativa, donde un aumento en una variable estaría asociado con una disminución en la otra. Sin embargo, dado que la magnitud es tan pequeña, esta relación negativa es prácticamente insignificante.
 
 * __Regresión lineal__
-Error cuadrático medio (MSE): 3.1890603295274906e+17
-Coeficiente de determinación (R^2): -0.0003296256420366461
-Intercepción: 518079372.14366764
-Coeficiente: -14448.855151167847
+  
+1. Error cuadrático medio (MSE): 3.1890603295274906e+17
+2. Coeficiente de determinación (R^2): -0.0003296256420366461
+3. Intercepción: 518079372.14366764
+4. Coeficiente: -14448.855151167847
 
 * __Interpretación:__
-Un MSE tan grande indica que las predicciones están muy lejos de los valores reales, hay un mal ajuste del modelo.
-Un R² negativo indica que el modelo no tiene poder predictivo.
-Intercepción: Este es el valor de streams cuando el bpm es 0.
-Coeficiente: Este coeficiente indica que por cada incremento unitario en bpm, los streams disminuyen en promedio aproximadamente 14448.85 unidades. Dado que esto no parece razonable y el R² es negativo, esto también sugiere que el modelo no es adecuado.
+  
+1. Un MSE tan grande indica que las predicciones están muy lejos de los valores reales, hay un mal ajuste del modelo.
+2. Un R² negativo indica que el modelo no tiene poder predictivo.
+3. Intercepción: Este es el valor de streams cuando el bpm es 0.
+4. Coeficiente: Este coeficiente indica que por cada incremento unitario en bpm, los streams disminuyen en promedio aproximadamente 14448.85 unidades. Dado que esto no parece razonable y el R² es negativo, esto también sugiere que el modelo no es adecuado.
 
 * __Conclusión:__ Se refuta la hipótesis inicial.
 
@@ -180,18 +182,35 @@ Los valores de correlación de 0.6077 (Spotify vs Deezer), 0.5527 (Spotify vs Ap
   
 * Spotify vs Deezer
 
-Error cuadrático medio (MSE): 21.5543438226604
-Coeficiente de determinación (R^2): 0.4004457933944051
-Intercepción: 0.5037406320271827
-Coeficiente: 0.18002131752879133
+1. Error cuadrático medio (MSE): 21.5543438226604
+2. Coeficiente de determinación (R^2): 0.4004457933944051
+3. Intercepción: 0.5037406320271827
+4. Coeficiente: 0.18002131752879133
 
 * __Interpretación:__
-El MSE de 21.55 sugiere que aunque el modelo hace un trabajo razonable prediciendo charts, hay un margen considerable de error. Sugiere que hay variabilidad en los datos que no está siendo capturada.
-El R² de 0.40 indica que hay una relación moderada entre in_spotify_charts y in_deezer_charts, pero no es lo suficientemente fuerte como para ser el único predictor de charts.
-El coeficiente positivo de 0.18 confirma que, en general, una mayor posición en spotify está asociado con una mayor posición en deezer.
-Conclusión: Se valida la hipótesis inicial.
+  
+1. El MSE de 21.55 sugiere que aunque el modelo hace un trabajo razonable prediciendo charts, hay un margen considerable de error. Sugiere que hay variabilidad en los datos que no está siendo capturada.
+2. El R² de 0.40 indica que hay una relación moderada entre in_spotify_charts y in_deezer_charts, pero no es lo suficientemente fuerte como para ser el único predictor de charts.
+3. El coeficiente positivo de 0.18 confirma que, en general, una mayor posición en spotify está asociado con una mayor posición en deezer.
 
 * __Conclusión:__ Se válida la hipótesis inicial.
+
+* __Regresión lineal__
+  
+* Spotify vs Apple
+  
+1. Error cuadrático medio (MSE): 1976.8643296982843
+2. Coeficiente de determinación (R^2): 0.24968577987854879
+3. Intercepción: 34.845478791842766
+4. Coeficiente: 1.4310541598256816
+
+* __Interpretación:__
+1. El MSE de 1976.86 es un valor alto lo que indica que no hay un buen ajuste del modelo a los datos.
+2. Un R² de 0.2497 indica que aproximadamente el 24.97% de los datos se pueden predecir por el modelo de regresión lineal.
+3. Intercepción cuando la variable independiente es 0, el modelo predice que la variable dependiente será aproximadamente 34.85.
+4. Coeficiente, sugiere una relación positiva, una mayor posición en spotify está asociado con una mayor posición en deezer.
+   
+*__Conclusión:__ Se válida la hipótesis inicial, pero la relación es débil como para ser un buen predictor por sí solo.
 
 ## Recomendaciones
 
