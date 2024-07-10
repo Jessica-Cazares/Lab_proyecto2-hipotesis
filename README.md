@@ -35,6 +35,7 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * Power BI
 * Google Docs
 * Google Slide
+* Jupyter Notebook
 
 ## Lenguajes
 
