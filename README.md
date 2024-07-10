@@ -12,9 +12,8 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Lenguajes](#lenguajes)
 - [Procesamiento y análisis](#procesamiento-y-análisis)
 - [Prueba de significancia](#prueba-de-significancia)
-- [Validación de hipótesis](#validación-de-hipótesis)
-- [Resultados](#resultados)
-- [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+- [Resultados y conclusiones](#resultados-y-conclusiones)
+- [Recomendaciones](#recomendaciones)
 
 ## Introducción
 En un mundo en el que la industria musical es extremadamente competitiva y está en permanente evolución, la capacidad de tomar decisiones basadas en datos se ha convertido en un activo invaluable. En este contexto, una discográfica se enfrenta al emocionante desafío de lanzar un nuevo artista en el escenario musical global. Afortunadamente, cuenta con una herramienta poderosa: un extenso dataset de Spotify con información sobre las canciones más escuchadas en 2023.
@@ -131,12 +130,16 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 5. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
 
-
-## Validación de hipótesis
-Se plantearon las siguientes hipótesis...
-
-## Resultados
+## Resultados y conclusiones
 Los resultados obtenidos...
 
-## Conclusiones y recomendaciones
-A partir de los resultados, se pueden extraer las siguientes conclusiones...
+## Recomendaciones
+
+Después del análisis y revisión de las hipótesis para que el lanzamiento de un artista sea exitoso y que sus canciones sean las más escuchadas se puede recomendar lo siguiente:
+
+* Estar disponible en todas las plataformas musicales, teniendo enfoque principal en Spotify, ya que el comportamiento de está plataforma influye en las demás.
+* Es relevante estar presente en un mayor número de playlists y en los rankings musicales para aumentar la visibilidad de la canción.
+* Aumentar rápidamente la cantidad de canciones que se lanzan al mercado, ya que hay una correlación positiva muy fuerte entre la cantidad de canciones y los streams, es decir, a mayor número de canciones mayor número de streams.
+* No hay una relación clara en que alguna de las características de la canción pueda influir en su éxito.
+* Hacer campañas de marketing y colaboración con los artistas más populares del momento.
+
