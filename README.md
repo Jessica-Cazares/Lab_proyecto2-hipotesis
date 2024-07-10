@@ -177,7 +177,9 @@ __Hipótesis 2: Las canciones más populares en el ranking de Spotify tienen com
 Los valores de correlación de 0.6077 (Spotify vs Deezer), 0.5527 (Spotify vs Apple Music), y 0.6055 (Spotify vs Shazam) indican relaciones positivas moderadas entre Spotify y cada una de las otras plataformas. Estos valores sugieren que las tendencias de popularidad de música en Spotify tienden a reflejarse también en Deezer, Apple Music, y Shazam. Ninguna de estas correlaciones es extremadamente alta, lo que indica que, aunque hay una relación, no es perfecta. Esto es esperable ya que cada plataforma puede tener su propia base de usuarios con preferencias ligeramente diferentes.
 
 * __Regresión lineal__
+  
 * Spotify vs Deezer
+
 Error cuadrático medio (MSE): 21.5543438226604
 Coeficiente de determinación (R^2): 0.4004457933944051
 Intercepción: 0.5037406320271827
