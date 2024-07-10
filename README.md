@@ -108,6 +108,16 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * En BigQuery se calculó la correlación en entre variables para cada una de las hipótesis utilizando el comando CORR.
 
 ## Prueba de significancia
+1. Planteamiento de la hipótesis:
+* Hipótesis nula (H0):* Las características de la música no influyen en el éxito en términos de cantidad de streams en Spotify.
+
+La diferencia de streams promedio en la categoría de cada característica son estadísticamente iguales.
+Streams promedio categoría alto = Streams promedio categoría bajo
+
+* Hipótesis Alternativa (H1):* Las características de la música INFLUYEN en el éxito en términos de cantidad de streams en Spotify.
+
+La diferencia de streams promedio en la categoría de cada característica son significativamente diferentes.
+Streams promedio categoría alto != Streams promedio categoría bajo
 
 ## Validación de hipótesis
 Se plantearon las siguientes hipótesis...
