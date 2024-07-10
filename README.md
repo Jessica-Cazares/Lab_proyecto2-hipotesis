@@ -29,14 +29,14 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
   5. Las características de la música influyen en el éxito en términos de cantidad de streams en Spotify.
 
 ## Herramientas
-*BigQuery
-*Power BI
-*Google Docs
-*Google Slide
+* BigQuery
+* Power BI
+* Google Docs
+* Google Slide
 
 ## Lenguajes
-*SQL en BigQuery
-*Python en Google Colab
+* SQL en BigQuery
+* Python en Google Colab
 
 ## Procesamiento
 El procesamiento de los datos incluyó varias etapas...
