@@ -14,6 +14,7 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Prueba de significancia](#prueba-de-significancia)
 - [Resultados y conclusiones](#resultados-y-conclusiones)
 - [Recomendaciones](#recomendaciones)
+- [Recursos](#recursos)
 
 ## Introducción
 En un mundo en el que la industria musical es extremadamente competitiva y está en permanente evolución, la capacidad de tomar decisiones basadas en datos se ha convertido en un activo invaluable. En este contexto, una discográfica se enfrenta al emocionante desafío de lanzar un nuevo artista en el escenario musical global. Afortunadamente, cuenta con una herramienta poderosa: un extenso dataset de Spotify con información sobre las canciones más escuchadas en 2023.
@@ -131,7 +132,10 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 5. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
 
 ## Resultados y conclusiones
-Los resultados obtenidos...
+
+# Análisis Exploratorio
+
+# Correlación y Regresión lineal
 
 ## Recomendaciones
 
