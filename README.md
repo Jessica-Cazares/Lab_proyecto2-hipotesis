@@ -122,18 +122,18 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
   Streams promedio categoría alto != Streams promedio categoría bajo
 
 2. Elegir nivel de confianza (alpha)
-*   Para evaluar la hipótesis, seleccionamos un nivel de confianza del 95% (α = 0.05). 
+* Para evaluar la hipótesis, seleccionamos un nivel de confianza del 95% (α = 0.05). 
 
 3. Elegir estadístico de contraste adecuado y calcular el pvalor
   Utilizamos dos pruebas estadísticas:
-  * __Test t de Student:__ prueba parámetrica.
-  * __Test Wilcoxon (Mann-Whitney U):__ prueba no paramétrica.
+* __Test t de Student:__ prueba parámetrica.
+* __Test Wilcoxon (Mann-Whitney U):__ prueba no paramétrica.
 
 5. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
 
 ## Resultados y conclusiones
 
-### Análisis Exploratorio
+### Análisis exploratorio
 
 * __Histograma bpm:__ Los valores de BPM más comunes se encuentran entre aproximadamente 85 y 145. Hay menos ocurrencias de valores de BPM por debajo de 80 y por encima de 180. La distribución parece simétrica, con una ligera tendencia hacia valores de BPM más altos.
   
@@ -142,9 +142,28 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * __Histograma participación playlist:__ La mayor frecuencia de datos está entre 0 y 5000 mil playlists. La distribución de los datos es asimétrica y está sesgada a la izquierda. Hay muy pocos datos con valores altos de participación en playlist.
 
 
+### Correlación entre variables y regresión lineal
 
+__Hipótesis 1: Las canciones con un mayor BPM (Beats Por Minuto) tienen más éxito en términos de cantidad de streams en Spotify.__
 
-### Correlación y Regresión lineal
+* Correlación r= -0.00320018576
+
+* Interpretación: el valor de r es muy cercana a 0, lo que indica que no hay una relación lineal significativa entre las dos variables. El signo negativo indica que, si existiera alguna relación, sería una relación negativa, donde un aumento en una variable estaría asociado con una disminución en la otra. Sin embargo, dado que la magnitud es tan pequeña, esta relación negativa es prácticamente insignificante.
+
+* Regresión lineal
+  1.Error cuadrático medio (MSE): 3.1890603295274906e+17
+  2.Coeficiente de determinación (R^2): -0.0003296256420366461
+  3. Intercepción: 518079372.14366764
+  4. Coeficiente: -14448.855151167847
+
+* Interpretación:
+1.Un MSE tan grande sugiere que las predicciones están muy lejos de los valores reales, indica un mal ajuste del modelo.
+2.Un R² negativo indica que el modelo no tiene poder predictivo.
+3.Intercepción: Este es el valor de streams cuando el bpm es 0.
+4.Coeficiente: Este coeficiente indica que por cada incremento unitario en bpm, los streams disminuyen en promedio aproximadamente 14448.85 unidades. Dado que esto no parece razonable y el R² es negativo, esto también sugiere que el modelo no es adecuado.
+
+* __Conclusión:__ Se refuta la hipótesis inicial.
+
 
 ## Recomendaciones
 
