@@ -361,3 +361,5 @@ Después del análisis y revisión de las hipótesis para que el lanzamiento de 
 * No hay una relación clara en que alguna de las características de la canción pueda influir en su éxito.
 * Hacer campañas de marketing y colaboración con los artistas más populares del momento.
 
+## Recursos 
+
