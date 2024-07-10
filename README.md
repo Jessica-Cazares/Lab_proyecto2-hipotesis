@@ -126,11 +126,10 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 3. Elegir estadístico de contraste adecuado y calcular el pvalor
   Utilizamos dos pruebas estadísticas:
-* __Test t de Student:__ prueba parámetrica.
-* __Test Wilcoxon (Mann-Whitney U):__ prueba no paramétrica.
+  * __Test t de Student:__ prueba parámetrica.
+  * __Test Wilcoxon (Mann-Whitney U):__ prueba no paramétrica.
 
 5. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
-![](imagenes/"C:\Users\kika_\Desktop\Jessica\Prueba_significancia_resultados.png")
 
 
 ## Validación de hipótesis
