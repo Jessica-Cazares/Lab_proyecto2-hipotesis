@@ -135,6 +135,15 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 ### Análisis Exploratorio
 
+* __Histograma bpm:__ Los valores de BPM más comunes se encuentran entre aproximadamente 85 y 145. Hay menos ocurrencias de valores de BPM por debajo de 80 y por encima de 180. La distribución parece simétrica, con una ligera tendencia hacia valores de BPM más altos.
+  
+* __Histograma Streams:__ Hay una frecuencia muy alta de streams en el rango de 0 a 500,000,000 mil millones, con más de 500 ocurrencias. Los valores de streams mayores 1,000,000,000 mil millones son mucho menos comunes. La distribución es asimétrica y está sesgada hacia la izquierda, con una larga cola hacia la derecha.
+
+* __Histograma participación playlist:__ La mayor frecuencia de datos está entre 0 y 5000 mil playlists. La distribución de los datos es asimétrica y está sesgada a la izquierda. Hay muy pocos datos con valores altos de participación en playlist.
+
+
+
+
 ### Correlación y Regresión lineal
 
 ## Recomendaciones
