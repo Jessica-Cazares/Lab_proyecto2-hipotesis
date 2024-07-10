@@ -10,7 +10,7 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Objetivo](#objetivo)
 - [Herramientas](#herramientas)
 - [Lenguajes](#lenguajes)
-- [Procesamiento y análisis](#procesamiento y análisis)
+- [Procesamiento ](#procesamiento)
 - [Validación de hipótesis](#validación-de-hipótesis)
 - [Resultados](#resultados)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -38,7 +38,7 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * SQL en BigQuery
 * Python en Google Colab
 
-## Procesamiento y análisis
+## Procesamiento
   1. Conectar/importar datos a herramientas
 * Se creó el proyecto2-hipotesis-lab y el conjunto de datos Dataset en BigQuery.
 * Tablas importadas: track_in_competition, track_in_spotify, track_technical_info
