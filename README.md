@@ -42,9 +42,9 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 ## Procesamiento
 
-  1. Conectar/importar datos a herramientas
-    * Se creó el proyecto2-hipotesis-lab y el conjunto de datos Dataset en BigQuery.
-    * Tablas importadas: track_in_competition, track_in_spotify, track_technical_info
+1. Conectar/importar datos a herramientas
+* Se creó el proyecto2-hipotesis-lab y el conjunto de datos Dataset en BigQuery.
+* Tablas importadas: track_in_competition, track_in_spotify, track_technical_info
 
   2. Identificar y manejar valores nulos
     * Se identifican valores nulos a través de comandos SQL COUNT, WHERE y IS NULL.
