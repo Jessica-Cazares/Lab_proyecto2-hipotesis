@@ -349,8 +349,6 @@ La hipótesis de que las características de la música influyen en el éxito en
 3. Intercepción: 566138289.9384496
 4. Coeficiente: -971945.7250246599
 
-
-
 ## Recomendaciones
 
 Después del análisis y revisión de las hipótesis para que el lanzamiento de un artista sea exitoso y que sus canciones sean las más escuchadas se puede recomendar lo siguiente:
@@ -362,4 +360,14 @@ Después del análisis y revisión de las hipótesis para que el lanzamiento de 
 * Hacer campañas de marketing y colaboración con los artistas más populares del momento.
 
 ## Recursos 
+
+### Presentación del Proyecto
+[![Ver Presentación](imagenes/)]()
+
+## Google Colab Notebook
+Puedes acceder a mi notebook en Google Colab haciendo clic [aquí]().
+
+## Dashboard de Power BI
+
+Puedes acceder al PDF de mi dashboard de Power BI haciendo clic [aquí]().
 
