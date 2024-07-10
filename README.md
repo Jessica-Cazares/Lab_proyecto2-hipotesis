@@ -39,8 +39,8 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 ## Lenguajes
 
-* SQL en BigQuery
-* Python en Google Colab
+* SQL
+* Python
 
 ## Procesamiento y análisis
 
