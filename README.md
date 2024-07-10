@@ -159,7 +159,7 @@ __Hipótesis 1: Las canciones con un mayor BPM (Beats Por Minuto) tienen más é
 
 * Interpretación:
 
-1. Un MSE tan grande sugiere que las predicciones están muy lejos de los valores reales, indica un mal ajuste del modelo.
+1. Un MSE tan grande indica que las predicciones están muy lejos de los valores reales, hay un mal ajuste del modelo.
 2. Un R² negativo indica que el modelo no tiene poder predictivo.
 3. Intercepción: Este es el valor de streams cuando el bpm es 0.
 4. Coeficiente: Este coeficiente indica que por cada incremento unitario en bpm, los streams disminuyen en promedio aproximadamente 14448.85 unidades. Dado que esto no parece razonable y el R² es negativo, esto también sugiere que el modelo no es adecuado.
