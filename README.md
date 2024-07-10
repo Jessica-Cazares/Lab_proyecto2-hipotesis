@@ -109,13 +109,13 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 ## Prueba de significancia
 1. Planteamiento de la hipótesis:
-* Hipótesis nula (H0): Las características de la música no influyen en el éxito en términos de cantidad de streams en Spotify.
+* _Hipótesis nula (H0)_ Las características de la música no influyen en el éxito en términos de cantidad de streams en Spotify.
 
   La diferencia de streams promedio en la categoría de cada característica son estadísticamente iguales.
 
   Streams promedio categoría alto = Streams promedio categoría bajo
 
-* Hipótesis Alternativa (H1): Las características de la música influyen en el éxito en términos de cantidad de streams en Spotify.
+* _Hipótesis Alternativa (H1):_ Las características de la música influyen en el éxito en términos de cantidad de streams en Spotify.
 
   La diferencia de streams promedio en la categoría de cada característica son significativamente diferentes.
 
@@ -126,10 +126,11 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 3. Elegir estadístico de contraste adecuado y calcular el pvalor
   Utilizamos dos pruebas estadísticas:
-** Test t de Student:** prueba parámetrica.
-** Test Wilcoxon (Mann-Whitney U):** prueba no paramétrica.
+* __Test t de Student:__ prueba parámetrica.
+* __Test Wilcoxon (Mann-Whitney U):__ prueba no paramétrica.
 
-4. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
+5. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
+![](imagenes/"C:\Users\kika_\Desktop\Jessica\Prueba_significancia_resultados.png")
 
 
 ## Validación de hipótesis
