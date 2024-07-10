@@ -46,40 +46,39 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * Se creó el proyecto2-hipotesis-lab y el conjunto de datos Dataset en BigQuery.
 * Tablas importadas: track_in_competition, track_in_spotify, track_technical_info
 
-  2. Identificar y manejar valores nulos
-    * Se identifican valores nulos a través de comandos SQL COUNT, WHERE y IS NULL.
-    * track_in_competition: 50 valores nulos en la columna in_shazam_charts.
-    * track_in_spotify: 0 nulos.
-    * track_technical_info: 95 valores nulos en la columna key.
+2. Identificar y manejar valores nulos
+* Se identifican valores nulos a través de comandos SQL COUNT, WHERE y IS NULL.
+* track_in_competition: 50 valores nulos en la columna in_shazam_charts.
+* track_in_spotify: 0 nulos.
+* track_technical_info: 95 valores nulos en la columna key.
   
-  3. Identificar y manejar valores duplicados
-    * Se identifican duplicados a través de comandos SQL COUNT, GROUP BY, HAVING.
-    * track_in_competition: no hay valores duplicados.
-    * track_in_spotify: 4 track_name duplicadas con diferentes track_id.
-     Para este análisis no se consideró la información de estos track_name porque no hay certeza de cuáles datos son correctos.
-     La muestra total contiene 952 datos y se consideraron solo 944.
-    * track_technical_info: no hay valores duplicados.
+3. Identificar y manejar valores duplicados
+* Se identifican duplicados a través de comandos SQL COUNT, GROUP BY, HAVING.
+* track_in_competition: no hay valores duplicados.
+* track_in_spotify: 4 track_name duplicadas con diferentes track_id. Para este análisis no se consideró la información de estos track_name porque no hay certeza de cuáles datos son correctos. La muestra total contiene 952 datos, se consideraron solo 944.
+* track_technical_info: no hay valores duplicados.
   
-  4. Identificar y manejar datos fuera del alcance del análisis
-    * Se manejan variables que no son útiles para el análisis a través de comandos SQL SELECT EXCEPT.
-    * track_tecnical_info: se excluyó la columna key por tener muchos datos nulos (95) y la columna mode por no tener información relevante para el análisis.
+4. Identificar y manejar datos fuera del alcance del análisis
+* Se manejan variables que no son útiles para el análisis a través de comandos SQL SELECT EXCEPT.
+* track_tecnical_info: se excluyó la columna key por tener muchos datos nulos (95) y la columna mode por no tener información relevante para el análisis.
 
-  5. Identificar y manejar datos discrepantes en variables categóricas
+5. Identificar y manejar datos discrepantes en variables categóricas
 * Se identifican datos discrepantes utilizando el comandos de manejo de string, como REGEXP.
-track_in_spotify: Se reemplazaron por espacios vacíos los caracteres especiales de los track_name y artist_s__name , se creó una nueva columna track_name_limpio y artist_s__name_limpio.
-Identificar y manejar datos discrepantes en variables numéricas
-Se identifican datos discrepantes utilizando comandos como MAX, MIN y AVG para las variables numéricas de interés para el estudio de cada base de datos.
+* track_in_spotify: Se reemplazaron por espacios vacíos los caracteres especiales de los track_name y artist_s__name , se creó una nueva columna track_name_limpio y artist_s__name_limpio.
+  
+6. Identificar y manejar datos discrepantes en variables numéricas
+* Se identifican datos discrepantes utilizando comandos como MAX, MIN y AVG para las variables numéricas de interés para el estudio de cada base de datos.
 
-Comprobar y cambiar tipo de dato
-track_in_spotify: Conversión de la variable streams de STRING a INTEGER usando comando SAFECAST, AS INT64 creando una nueva variable streams_numero, se calculan los valores MAX, MIN y AVG.
+7. Comprobar y cambiar tipo de dato
+* track_in_spotify: Conversión de la variable streams de STRING a INTEGER usando comando SAFECAST, AS INT64 creando una nueva variable streams_numero, se calculan los valores MAX, MIN y AVG.
 
-Crear nuevas variables
-track_in_spotify: Se creó la variable released, utilizando CONCAT.
+8. Crear nuevas variables
+* track_in_spotify: Se creó la variable released, utilizando CONCAT.
 
-Unir tablas
-Se crearon vistas de las tablas con los datos limpios, view_competition_limpia, view_technical_info_limpia y view_spotify_limpia
-Unión de las tablas limpias usando LEFT JOIN.
-Se creó la variable total_part_playlist usando SUM.
+9. Unir tablas
+* Se crearon vistas de las tablas con los datos limpios, view_competition_limpia, view_technical_info_limpia y view_spotify_limpia
+* Unión de las tablas limpias usando LEFT JOIN.
+* Se creó la variable total_part_playlist usando SUM.
 
 Construir tablas auxiliares
 Se creó tabla temporal para calcular el total de canciones por artista solista usando WITH.
