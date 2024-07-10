@@ -91,7 +91,7 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * Se crearon gráficas de barras para la visualización de variables categóricas en Power BI.
 
 13. Aplicar medidas de tendencia central y de dispersión
-*Usando Matrix en Power BI se calcularon las medidas de tendencia central y dispersión para las variables bpm, streams spotify, playlist spotify, deezer, apple y total de participación playlists.
+* Usando Matrix en Power BI se calcularon las medidas de tendencia central y dispersión para las variables bpm, streams spotify, playlist spotify, deezer, apple y total de participación playlists.
 
 14. Visualizar distribución
 * Utilizando Python se crearon histogramas para las variables bpm, streams_numero, total_part_playlist.
