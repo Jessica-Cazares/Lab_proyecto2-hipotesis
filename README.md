@@ -9,6 +9,7 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Introducción](#introducción)
 - [Objetivo](#objetivo)
 - [Herramientas](#herramientas)
+- [Lenguajes](#lenguajes)
 - [Procesamiento](#procesamiento)
 - [Validación de hipótesis](#validación-de-hipótesis)
 - [Resultados](#resultados)
@@ -27,9 +28,15 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
   4. Los artistas con un mayor número de canciones en Spotify tienen más streams.
   5. Las características de la música influyen en el éxito en términos de cantidad de streams en Spotify.
 
-
 ## Herramientas
-En esta sección se detallan las herramientas utilizadas...
+*BigQuery
+*Power BI
+*Google Docs
+*Google Slide
+
+## Lenguajes
+*SQL en BigQuery
+*Python en Google Colab
 
 ## Procesamiento
 El procesamiento de los datos incluyó varias etapas...
