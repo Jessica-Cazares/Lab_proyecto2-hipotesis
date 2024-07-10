@@ -11,6 +11,7 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Herramientas](#herramientas)
 - [Lenguajes](#lenguajes)
 - [Procesamiento ](#procesamiento)
+- [Prueba de significancia](#prueba de significancia)
 - [Validación de hipótesis](#validación-de-hipótesis)
 - [Resultados](#resultados)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -106,6 +107,7 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 17. Calcular correlación entre variables
 * En BigQuery se calculó la correlación en entre variables para cada una de las hipótesis utilizando el comando CORR.
 
+## Prueba de significancia
 
 ## Validación de hipótesis
 Se plantearon las siguientes hipótesis...
