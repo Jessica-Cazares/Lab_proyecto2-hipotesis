@@ -80,33 +80,31 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * Unión de las tablas limpias usando LEFT JOIN.
 * Se creó la variable total_part_playlist usando SUM.
 
-Construir tablas auxiliares
-Se creó tabla temporal para calcular el total de canciones por artista solista usando WITH.
+10. Construir tablas auxiliares
+* Se creó tabla temporal para calcular el total de canciones por artista solista usando WITH.
 
-Análisis exploratorio
+11. Agrupar datos según variables categóricas
+* Se importan los datos de BigQuery a Power BI.
+* Se crearon tablas matrix con la cantidad de tracks por artista, cantidad de tracks por released_year y la cantidad de streams por año.
 
-Agrupar datos según variables categóricas
-Se importan los datos de BigQuery a Power BI.
-Se crearon tablas matrix con la cantidad de tracks por artista, cantidad de tracks por released_year y la cantidad de streams por año.
+12. Visualizar las variables categóricas
+* Se crearon gráficas de barras para la visualización de variables categóricas en Power BI.
 
-Visualizar las variables categóricas
-Se crearon gráficas de barras para la visualización de variables categóricas en Power BI.
+13. Aplicar medidas de tendencia central y de dispersión
+*Usando Matrix en Power BI se calcularon las medidas de tendencia central y dispersión para las variables bpm, streams spotify, playlist spotify, deezer, apple y total de participación playlists.
 
-Aplicar medidas de tendencia central y de dispersión
-Usando Matrix en Power BI se calcularon las medidas de tendencia central y dispersión para las variables bpm, streams spotify, playlist spotify, deezer, apple y total de participación playlists.
+14. Visualizar distribución
+* Utilizando Python se crearon histogramas para las variables bpm, streams_numero, total_part_playlist.
 
-Visualizar distribución
-Utilizando Python se crearon histogramas para las variables bpm, streams_numero, total_part_playlist.
+15. Visualizar el comportamiento de los datos a lo largo del tiempo
+* Se crearon gráficos de línea en Power BI para evaluar el comportamiento de la cantidad de tracks y streams a lo largo del tiempo.
 
-Visualizar el comportamiento de los datos a lo largo del tiempo
-Se crearon gráficos de línea en Power BI para evaluar el comportamiento de la cantidad de tracks y streams a lo largo del tiempo.
+16. Calcular cuartiles, deciles o percentiles
+* Se crearon categorías por cuartiles para las variables de características en BigQuery utilizando WITH, NTILE, IF.
+* Se crearon las categorías alto y bajo para cada característica.
 
-Calcular cuartiles, deciles o percentiles
-Se crearon categorías por cuartiles para las variables de características en BigQuery utilizando WITH, NTILE, IF.
-Se crearon las categorías alto y bajo para cada característica.
-
-Calcular correlación entre variables
-En BigQuery se calculó la correlación en entre variables para cada una de las hipótesis utilizando el comando CORR.
+17. Calcular correlación entre variables
+* En BigQuery se calculó la correlación en entre variables para cada una de las hipótesis utilizando el comando CORR.
 
 
 ## Validación de hipótesis
