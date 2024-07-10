@@ -133,9 +133,9 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 ## Resultados y conclusiones
 
-# Análisis Exploratorio
+### Análisis Exploratorio
 
-# Correlación y Regresión lineal
+### Correlación y Regresión lineal
 
 ## Recomendaciones
 
