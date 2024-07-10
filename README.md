@@ -151,12 +151,14 @@ __Hipótesis 1: Las canciones con un mayor BPM (Beats Por Minuto) tienen más é
 * Interpretación: el valor de r es muy cercana a 0, lo que indica que no hay una relación lineal significativa entre las dos variables. El signo negativo indica que, si existiera alguna relación, sería una relación negativa, donde un aumento en una variable estaría asociado con una disminución en la otra. Sin embargo, dado que la magnitud es tan pequeña, esta relación negativa es prácticamente insignificante.
 
 * Regresión lineal
+  
   1.Error cuadrático medio (MSE): 3.1890603295274906e+17
   2.Coeficiente de determinación (R^2): -0.0003296256420366461
   3. Intercepción: 518079372.14366764
   4. Coeficiente: -14448.855151167847
 
 * Interpretación:
+  
 1.Un MSE tan grande sugiere que las predicciones están muy lejos de los valores reales, indica un mal ajuste del modelo.
 2.Un R² negativo indica que el modelo no tiene poder predictivo.
 3.Intercepción: Este es el valor de streams cuando el bpm es 0.
