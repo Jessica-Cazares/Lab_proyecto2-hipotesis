@@ -1,7 +1,7 @@
-### Contenido
+## Contenido
 En estos archivos encontraras información de las pruebas aplicadas para la validación de las hipotesis.
 
-## Prueba de significancia
+### Prueba de significancia
 
 1. Planteamiento de la hipótesis
   
