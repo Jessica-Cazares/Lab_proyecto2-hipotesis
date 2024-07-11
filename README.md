@@ -13,8 +13,6 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Herramientas](#herramientas)
 - [Lenguajes](#lenguajes)
 - [Procesamiento y análisis](#procesamiento-y-análisis)
-- [Análisis Exploratorio](#analisis-exploratorio)
-- [BigQuery](/BigQuery/README.md)
 - [Jupyter Nootebook](/Jupyter_Nootebook/README.md)
 - [Ficha tecnica](/Ficha_tecnica/ficha_tecnica)
 - [Visualizacion](/Visualizacion/README.md)
@@ -22,8 +20,6 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Prueba de significancia](#prueba-de-significancia)
 - [Resultados y conclusiones](#resultados-y-conclusiones)
 - [Recomendaciones](#recomendaciones)
-- [Recursos](#recursos)
-
 
 ## Introducción
 En un mundo en el que la industria musical es extremadamente competitiva y está en permanente evolución, la capacidad de tomar decisiones basadas en datos se ha convertido en un activo invaluable. En este contexto, una discográfica se enfrenta al emocionante desafío de lanzar un nuevo artista en el escenario musical global. Afortunadamente, cuenta con una herramienta poderosa: un extenso dataset de Spotify con información sobre las canciones más escuchadas en 2023.
@@ -50,19 +46,6 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 * SQL
 * Python
-
-## Análisis exploratorio de datos
-
-Encontrarás las consultas, tablas y vistas que se realizaron para el proceso de limpieza de datos:
-
-1. Carga de datos
-2. Exploración Inicial de los Datos
-3. Manejo de Valores Faltantes
-4. Corrección de Tipos de Datos
-5. Detección y Manejo de Outliers
-6. Creación de Nuevas Variables
-
-Este proceso es fundamental para asegurar la calidad y precisión del análisis subsiguiente.
 
 ## Procesamiento y análisis
 
@@ -129,6 +112,8 @@ Este proceso es fundamental para asegurar la calidad y precisión del análisis 
   
 17. Calcular correlación entre variables
 * En BigQuery se calculó la correlación en entre variables para cada una de las hipótesis utilizando el comando CORR.
+
+Este proceso es fundamental para asegurar la calidad y precisión del análisis subsiguiente.
 
 ## Prueba de significancia
 1. Planteamiento de la hipótesis:
@@ -381,16 +366,3 @@ Después del análisis y revisión de las hipótesis para que el lanzamiento de 
 * Aumentar rápidamente la cantidad de canciones que se lanzan al mercado, ya que hay una correlación positiva muy fuerte entre la cantidad de canciones y los streams, es decir, a mayor número de canciones mayor número de streams.
 * No hay una relación clara en que alguna de las características de la canción pueda influir en su éxito.
 * Hacer campañas de marketing y colaboración con los artistas más populares del momento.
-
-## Recursos 
-
-### Presentación del Proyecto
-[![Ver Presentación](imagenes/)]()
-
-## Google Colab Notebook
-Puedes acceder a mi notebook en Google Colab haciendo clic [aquí]().
-
-## Dashboard de Power BI
-
-Puedes acceder al PDF de mi dashboard de Power BI haciendo clic [aquí]().
-
