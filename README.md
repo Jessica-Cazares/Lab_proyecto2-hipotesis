@@ -14,10 +14,10 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Lenguajes](#lenguajes)
 - [Procesamiento y análisis](#procesamiento-y-análisis)
 - [Recomendaciones](#recomendaciones)
-- [Jupyter Nootebook](/Jupyter_Nootebook/README.md)
-- [Ficha tecnica](/Ficha_tecnica/ficha_tecnica)
-- [Visualizacion](/Visualizacion/README.md)
-- [Presentacion](/Presentacion/README.md)
+- [Jupyter Notebook](/Jupyter_Notebook/README.md)
+- [Ficha tecnica](/Ficha_tecnica/README.md)
+- [Visualización](/Visualización/README.md)
+- [Presentación](/Presentación/README.md)
 
 
 ## Introducción
