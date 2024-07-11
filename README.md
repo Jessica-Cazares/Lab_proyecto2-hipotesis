@@ -13,7 +13,6 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Herramientas](#herramientas)
 - [Lenguajes](#lenguajes)
 - [Procesamiento y análisis](#procesamiento-y-análisis)
-- [Recomendaciones](#recomendaciones)
 - [Jupyter Notebook](/Jupyter_Notebook/README.md)
 - [Ficha tecnica](/Ficha_tecnica/README.md)
 - [Visualización](/Visualización/README.md)
@@ -113,13 +112,3 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * En BigQuery se calculó la correlación en entre variables para cada una de las hipótesis utilizando el comando CORR.
 
 Este proceso es fundamental para asegurar la calidad y precisión del análisis subsiguiente.
-
-## Recomendaciones
-
-Después del análisis y revisión de las hipótesis para que el lanzamiento de un artista sea exitoso y que sus canciones sean las más escuchadas se puede recomendar lo siguiente:
-
-* Estar disponible en todas las plataformas musicales, teniendo enfoque principal en Spotify, ya que el comportamiento de está plataforma influye en las demás.
-* Es relevante estar presente en un mayor número de playlists y en los rankings musicales para aumentar la visibilidad de la canción.
-* Aumentar rápidamente la cantidad de canciones que se lanzan al mercado, ya que hay una correlación positiva muy fuerte entre la cantidad de canciones y los streams, es decir, a mayor número de canciones mayor número de streams.
-* No hay una relación clara en que alguna de las características de la canción pueda influir en su éxito.
-* Hacer campañas de marketing y colaboración con los artistas más populares del momento.
