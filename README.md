@@ -11,7 +11,8 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Herramientas](#herramientas)
 - [Lenguajes](#lenguajes)
 - [Procesamiento y análisis](#procesamiento-y-análisis)
-- BigQuery
+- [BigQuery](/BigQuery)
+- 
 - Jupyter Nootebook
 - [Prueba de significancia](#prueba-de-significancia)
 - [Resultados y conclusiones](#resultados-y-conclusiones)
