@@ -4,6 +4,8 @@
 
 La validación de hipótesis es un proceso fundamental en la toma de decisiones basadas en evidencia, y no solamente en creencias u opiniones. Validar hipótesis (confirmar o refutar) se consigue con técnicas y métodos diseñados para determinar si los resultados observados en los datos, son estadísticamente significativos o si pueden atribuirse al azar.
 
+![](C:\Users\kika_\Desktop\Jessica\Hito 3 Gráficas\caracteristicas\plataformasimagen.png)
+
 # Temas
 
 - [Introducción](#introducción)
