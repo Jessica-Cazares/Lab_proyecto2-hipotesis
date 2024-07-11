@@ -32,19 +32,6 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
   4. Los artistas con un mayor número de canciones en Spotify tienen más streams.
   5. Las características de la música influyen en el éxito en términos de cantidad de streams en Spotify.
 
-## Herramientas
-
-* BigQuery
-* Power BI
-* Google Docs
-* Google Slide
-* Jupyter Notebook
-
-## Lenguajes
-
-* SQL
-* Python
-
 ## Procesamiento y análisis
 
 1. Conectar/importar datos a herramientas
@@ -112,3 +99,16 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 * En BigQuery se calculó la correlación en entre variables para cada una de las hipótesis utilizando el comando CORR.
 
 Este proceso es fundamental para asegurar la calidad y precisión del análisis subsiguiente.
+
+## Herramientas
+
+* BigQuery
+* Power BI
+* Google Docs
+* Google Slide
+* Jupyter Notebook
+
+## Lenguajes
+
+* SQL
+* Python
