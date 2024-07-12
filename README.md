@@ -1,4 +1,4 @@
-# Laboratoria - Proyecto 2 :gear:  </> :gear: :bar_chart:
+# Laboratoria - Proyecto 2 :gear:  :</>: :gear: 
 
 # HIPÓTESIS: Plataformas Musicales :heavy_check_mark:
 
@@ -32,7 +32,7 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
   4. Los artistas con un mayor número de canciones en Spotify tienen más streams.
   5. Las características de la música influyen en el éxito en términos de cantidad de streams en Spotify.
 
-## Procesamiento y análisis
+## Procesamiento y análisis :bar_chart:
 
 1. Conectar/importar datos a herramientas
 * Se creó el proyecto2-hipotesis-lab y el conjunto de datos Dataset en BigQuery.
