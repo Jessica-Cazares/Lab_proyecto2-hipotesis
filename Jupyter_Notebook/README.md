@@ -26,7 +26,7 @@ En estos archivos encontraras información de las pruebas aplicadas para la vali
 
 5. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
 
-![](/Imagenes/prueba_significancia_resultados.png)
+![](/Imagenes/Prueba_significancia_resultados.png)
 
 ## Regresión lineal simple :bar_chart:
 
