@@ -1,5 +1,5 @@
 ## Contenido :dart:
-En estos archivos encontraras información de las pruebas aplicadas para la validación de las hipotesis.
+En estos archivos encontraras información de las pruebas aplicadas para la validación de las hipótesis.
 
 ## Prueba de significancia :bulb:
 1. Planteamiento de la hipótesis:
