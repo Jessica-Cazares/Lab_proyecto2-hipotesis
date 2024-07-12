@@ -100,7 +100,7 @@ Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace
 
 Este proceso es fundamental para asegurar la calidad y precisión del análisis subsiguiente.
 
-## Herramientas
+## Herramientas :hammer_and_wrench:
 
 * BigQuery
 * Power BI
