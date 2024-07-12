@@ -1,4 +1,4 @@
-# Laboratoria - Proyecto 2 :gear:  :</>: :gear: 
+# Laboratoria - Proyecto 2 :black_nib:
 
 # HIPÓTESIS: Plataformas Musicales :heavy_check_mark:
 
@@ -19,10 +19,10 @@ La validación de hipótesis es un proceso fundamental en la toma de decisiones 
 - [Presentación](/Presentación/README.md)
 
 
-## Introducción
+## Introducción :gear:
 En un mundo en el que la industria musical es extremadamente competitiva y está en permanente evolución, la capacidad de tomar decisiones basadas en datos se ha convertido en un activo invaluable. En este contexto, una discográfica se enfrenta al emocionante desafío de lanzar un nuevo artista en el escenario musical global. Afortunadamente, cuenta con una herramienta poderosa: un extenso dataset de Spotify con información sobre las canciones más escuchadas en 2023.
 
-## Objetivo :bookmark:
+## Objetivo :dart:
 
 Validar o refutar las hipótesis planteadas por la discográfica sobre qué hace que una canción sea más escuchada.
   
@@ -108,7 +108,7 @@ Este proceso es fundamental para asegurar la calidad y precisión del análisis 
 * Google Slide
 * Jupyter Notebook
 
-## Lenguajes
+## Lenguajes :pencil2:
 
 * SQL
 * Python
