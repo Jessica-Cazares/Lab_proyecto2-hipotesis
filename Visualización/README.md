@@ -9,4 +9,4 @@ En este archivo encontrarás información sobre:
 5. Visualizar el comportamiento de los datos a lo largo del tiempo
 6. Dashboard
 
-
+![](/Imagenes/Dashboard-hipotesis.png)
