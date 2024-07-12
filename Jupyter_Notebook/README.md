@@ -26,6 +26,8 @@ En estos archivos encontraras información de las pruebas aplicadas para la vali
 
 5. Comparar el p valor con el de alpha y concluir si aceptamos o rechazamos la H0
 
+![](/Imagenes/prueba_significancia_resultados.png)
+
 ## Regresión lineal simple
 
 Contiene el detalle de las consultas empleadas para predecir el valor de una variable en función de la otra, y el cálculo del error cuadrático medio (MSE), coeficiente de determinación (R2), intercepción y coeficiente.
