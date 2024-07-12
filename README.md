@@ -1,6 +1,6 @@
 # Laboratoria - Proyecto 2 :black_nib:
 
-# HIPÓTESIS: Plataformas Musicales :heavy_check_mark:
+# HIPÓTESIS: Plataformas Musicales :musical_note: :notes: :headphones:
 
 La validación de hipótesis es un proceso fundamental en la toma de decisiones basadas en evidencia, y no solamente en creencias u opiniones. Validar hipótesis (confirmar o refutar) se consigue con técnicas y métodos diseñados para determinar si los resultados observados en los datos, son estadísticamente significativos o si pueden atribuirse al azar.
 
