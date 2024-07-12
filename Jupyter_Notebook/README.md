@@ -1,7 +1,7 @@
-## Contenido
+## Contenido :dart:
 En estos archivos encontraras información de las pruebas aplicadas para la validación de las hipotesis.
 
-## Prueba de significancia
+## Prueba de significancia :bulb:
 1. Planteamiento de la hipótesis:
    
 * _Hipótesis nula (H0)_ Las características de la música no influyen en el éxito en términos de cantidad de streams en Spotify.
@@ -28,7 +28,7 @@ En estos archivos encontraras información de las pruebas aplicadas para la vali
 
 ![](/Imagenes/prueba_significancia_resultados.png)
 
-## Regresión lineal simple
+## Regresión lineal simple :bar_chart:
 
 Contiene el detalle de las consultas empleadas para predecir el valor de una variable en función de la otra, y el cálculo del error cuadrático medio (MSE), coeficiente de determinación (R2), intercepción y coeficiente.
 
