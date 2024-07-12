@@ -1,4 +1,4 @@
-# Laboratoria - Proyecto 2
+# Laboratoria - Proyecto 2 :gear:  </> :gear: :bar_chart:
 
 # HIPÓTESIS: Plataformas Musicales :heavy_check_mark:
 
