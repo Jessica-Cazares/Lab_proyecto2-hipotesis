@@ -1,12 +1,13 @@
+# DASHBOARD :chart:
+
 ## Contenido :dart:
 
 En este archivo encontrarás información sobre:
 
-1. Agrupar datos según variables categóricas
-2. Visualizar las variables categóricas
-3. Aplicar medidas de tendencia central y de dispersión
-4. Visualizar distribución
-5. Visualizar el comportamiento de los datos a lo largo del tiempo
+1. Análisis exploratiorio.
+2. Estadísticas descriptivas (medidas de tendencia central y de dispersión).
+3. Gráficos para visualizar distribución (box plot).
+5. Tabla resumen con el calculo del riesgo relativo.
 6. Dashboard
 
 ![](/Imagenes/Dashboard-hipotesis.png)
