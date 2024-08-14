@@ -1,0 +1,935 @@
+﻿PROYECTO 2: HIPÓTESIS PLATAFORMAS MUSICALES
+
+
+Consultas BigQuery
+
+
+Classic Queries
+
+
+Nulos
+--Query para contar nulos en track_in_competition
+SELECT
+ COUNT (*)
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_competition`
+WHERE
+ track_id IS NULL
+ OR in_apple_playlists IS NULL
+ OR in_apple_charts IS NULL
+ OR in_deezer_playlists IS NULL
+ OR in_deezer_charts IS NULL
+ OR in_shazam_charts IS NULL;
+
+
+--Query para buscar nulos track_in_competition
+SELECT
+ *
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_competition`
+WHERE
+ track_id IS NULL
+ OR in_apple_playlists IS NULL
+ OR in_apple_charts IS NULL
+ OR in_deezer_playlists IS NULL
+ OR in_deezer_charts IS NULL
+ OR in_shazam_charts IS NULL;
+
+
+--Query para contar nulos en track_in_spotify
+SELECT
+ COUNT(*)
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`
+WHERE
+ track_id IS NULL
+ OR track_name IS NULL
+ OR artist_s__name IS NULL
+ OR artist_count IS NULL
+ OR released_year IS NULL
+ OR released_month IS NULL
+ OR released_day IS NULL
+ OR in_spotify_playlists IS NULL
+ OR in_spotify_charts IS NULL
+ OR streams IS NULL;
+
+
+--Query para contar nulos en track_technical
+SELECT
+ COUNT(*)
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_technical_info`
+WHERE
+ track_id IS NULL
+ OR bpm IS NULL
+ OR key IS NULL
+ OR mode IS NULL
+ OR `danceability_%` IS NULL
+ OR `valence_%` IS NULL
+ OR `energy_%`IS NULL
+ OR `acousticness_%` IS NULL
+ OR `instrumentalness_%` IS NULL
+ OR `liveness_%` IS NULL
+ OR `speechiness_%` IS NULL;
+
+
+--Query para buscar nulos en track_technical
+SELECT
+ *
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_technical_info`
+WHERE
+ track_id IS NULL
+ OR bpm IS NULL
+ OR key IS NULL
+ OR mode IS NULL
+ OR `danceability_%` IS NULL
+ OR `valence_%` IS NULL
+ OR `energy_%`IS NULL
+ OR `acousticness_%` IS NULL
+ OR `instrumentalness_%` IS NULL
+ OR `liveness_%` IS NULL
+ OR `speechiness_%` IS NULL;
+
+
+Duplicados:
+
+
+--Query para buscar duplicados en track_in_competition
+SELECT
+ track_id,
+ in_apple_playlists,
+ in_apple_charts,
+ COUNT(*) AS cantidad
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_competition`
+GROUP BY
+ track_id,
+ in_apple_playlists,
+ in_apple_charts
+HAVING
+ COUNT(*) >1;
+
+
+ --Query para buscar duplicados en track_in_spotify
+SELECT
+ track_name,
+ artist_s__name,
+ COUNT(*) AS cantidad
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`
+GROUP BY
+ track_name,
+ artist_s__name
+HAVING
+ COUNT(*) >1;
+
+
+-- Query para comparar canciones duplicadas en track_in_spotify con track_name
+SELECT
+ *
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`
+WHERE
+ track_name IN ('SNAP','About Damn Time','Take My Breath','SPIT IN MY FACE!');
+
+
+ --Query para comparar canciones duplicadas en track_in_spotify con track_id
+SELECT
+ *
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`
+WHERE
+ track_id IN ('4967469','8173823', '1119309','4586215','5675634','3814670','5080031','7173596');
+
+
+
+
+ --Query para comparar canciones duplicadas en track_technical_info
+SELECT *
+FROM `Dataset.track_technical_info`
+where track_id IN (SELECT track_id
+FROM `Dataset.track_in_spotify`
+where track_name IN ('SNAP','About Damn Time','Take My Breath','SPIT IN MY FACE!'));
+
+
+Nuevas Variables 
+
+
+--Query nuevas variables
+SELECT
+ track_id,
+ track_name,
+ artist_s__name,
+ artist_count,
+ released_year,
+ released_month,
+ released_day,
+CAST(CONCAT(CAST(released_year AS string),'-', LPAD(CAST(released_month AS string),2,'0'),'-', LPAD(CAST(released_day AS string),2,'0')) AS DATE) AS released,
+in_spotify_playlists,
+ in_spotify_charts,
+ streams_numero
+FROM `Dataset.view_streams_numero`;
+
+
+Streams_numero
+
+
+--Query para cambiar el tipo de dato streams de STRING a INTERGER usando SAFE_CAST
+SELECT
+ SAFE_CAST(streams AS INT64) AS streams_numero
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`;
+
+
+
+
+--Query para cambiar el tipo de dato streams de STRING a INTERGER usando CAST NOT LIKE
+SELECT
+CAST(streams AS INT64) AS streams_numero
+FROM `proyecto2-hipotesis-lab.Dataset.track_in_spotify`
+WHERE streams NOT LIKE 'BPM%';
+
+
+Total_streams_alto_bajo
+--Query para calcular el total de streams para la categoría alto
+SELECT
+   c_valance,
+   COUNT(*) AS cantidad,
+   SUM(streams_numero) AS suma_streams
+FROM
+   ``
+   where cat_instrument = 'alto'
+GROUP BY
+   cat_instrument;
+--Query para calcular el total de streams para la categoría bajo
+SELECT
+   c_valance,
+   COUNT(*) AS cantidad,
+   SUM(streams_numero) AS suma_streams
+FROM
+   ``
+   where cat_instrument = 'alto'
+GROUP BY
+   cat_instrument;
+
+
+Valores_fuera_alcance
+--Query para excluir valores fuera de alcance track_technical
+SELECT
+ * EXCEPT (KEY,
+   mode)
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_technical_info`;
+
+
+Variables_numericas_max_min
+#Query para identificar y manejar datos discrepantes en variables numéricas
+#Query para identificar Valores max y min de track_in_spotify
+SELECT
+MAX(streams) AS max_streams,
+MIN(streams) AS min_streams,
+MAX(in_spotify_playlists) AS max_spotify_playlist,
+MIN(in_spotify_playlists) AS min_spotify_playlist,
+MAX(in_spotify_charts) AS max_spotify_charts,
+MIN(in_spotify_charts) AS min_spotify_charts,
+FROM `proyecto2-hipotesis-lab.Dataset.track_in_spotify`;
+
+
+#Query para identificar valores max y min de track_in_competition
+SELECT
+MAX(in_apple_playlists) AS max_apple_playlists,
+MIN(in_apple_playlists) AS min_apple_playlists,
+MAX(in_apple_charts) AS max_apple_charts,
+MIN(in_apple_charts) AS min_apple_charts,
+MAX(in_deezer_playlists) AS max_deezer_playlists,
+MIN(in_deezer_playlists) AS min_deezer_playlists,
+MAX(in_shazam_charts) AS max_shazam_charts,
+MIN(in_shazam_charts) AS min_in_shazam_charts,
+FROM `proyecto2-hipotesis-lab.Dataset.track_in_competition`;
+
+
+#Query para identificar valores max y min de track_technical_info
+SELECT
+MAX(bpm) AS max_bpm,
+MIN(bpm) AS min_bpm,
+MAX(`danceability_%`) AS max_danceability,
+MIN(`danceability_%`) AS min_danceability,
+MAX(`valence_%`) AS max_valence,
+MIN(`valence_%`) AS min_valence,
+MAX(`energy_%`) AS max_energy,
+MIN(`energy_%`) AS min_energy,
+MAX(`acousticness_%`) AS max_acousticness,
+MIN(`acousticness_%`) AS min_acousticness,
+MAX(`instrumentalness_%`) AS max_instrumentalness,
+MIN(`instrumentalness_%`) AS min_instrumentalness,
+MAX (`liveness_%`) AS max_liveness,
+MIN (`liveness_%`) AS min_liveness,
+MAX(`speechiness_%`) AS max_speechiness,
+MIN(`speechiness_%`) AS min_speechiness,
+FROM `proyecto2-hipotesis-lab.Dataset.track_technical_info`;
+
+
+Correlacion_variables
+ --Query hipótesis 1 para calcular correlacion entre bpm vs cantidas streams spotify
+SELECT
+ CORR(bpm,streams_numero) AS correlation_value
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+
+
+-- Query hipotesis 2 para calcular correlación entre ranking spotify y deezer
+SELECT
+ CORR(in_spotify_charts,in_deezer_charts) AS correlation_spot_deezer,
+ CORR(in_spotify_charts,in_shazam_charts) AS correlation_spot_shazam,
+ CORR(in_spotify_charts,in_apple_charts) AS correlation_spot_apple,
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+
+
+ --Query hipótesis 3 para calcular correlacion streams vs total participacion en playlist
+SELECT
+ CORR(streams_numero, total_part_playlist) AS correlation_value
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+
+
+--Query hipótesis 4 artistas con mayor número de canciones en spotify tienen más streams
+SELECT
+ CORR(total_canciones,total_streams) AS correlation_value
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_hipotesis4`
+ --Query hipótesis 5 las características de la canción influyen en el éxito en términos de streams spotify
+SELECT
+ CORR(streams_numero,  `danceability_%` ) AS correlation_dance,
+ CORR(streams_numero, `valence_%`) AS correlation_valance,
+ CORR(streams_numero, `energy_%`) AS correlation_energy,
+ CORR(streams_numero,`acousticness_%`) AS correlation_acous,
+ CORR(streams_numero,`instrumentalness_%`) AS correlation_inst,
+ CORR(streams_numero,`liveness_%`) AS correlation_live,
+ CORR (streams_numero,`speechiness_%`) AS correlation_speech,
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas`  
+
+
+
+
+
+
+
+
+
+
+ --Query para calcular correlacion entre streams y danceability
+SELECT
+ CORR(streams_numero,`danceability_%`) AS correlation_value
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+
+
+  --Query para calcular todas las correlacion
+SELECT
+ CORR(streams_numero,`danceability_%`) AS correlation_streams_dance, CORR(streams_numero, total_part_playlist) AS correlation_streams_totplaylist, CORR(bpm,streams_numero) AS correlation_bpm_streams
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+
+
+Cuartiles_categ_dance
+--Query para calcular cuartiles y categorías todas las variables usando IF
+WITH
+ quartiles AS(
+ SELECT
+   streams_numero,
+   bpm,
+   `danceability_%`,
+   `valence_%`,
+   `energy_%`,
+   `acousticness_%`,
+   `instrumentalness_%`,
+   `liveness_%`,
+   `speechiness_%`,
+NTILE (4) OVER (ORDER BY streams_numero) AS quartiles_streams,
+NTILE (4) OVER (ORDER BY bpm) AS quartiles_bpm,
+NTILE (4) OVER (ORDER BY `danceability_%`) AS quartiles_dance,
+NTILE (4) OVER (ORDER BY `valence_%`) AS quartiles_valence,
+NTILE (4) OVER (ORDER BY `energy_%`) AS quartiles_energy,
+NTILE (4) OVER (ORDER BY `acousticness_%`) AS quartiles_acoust,
+NTILE (4) OVER (ORDER BY `instrumentalness_%`) AS quartiles_instrument,
+NTILE (4) OVER (ORDER BY `liveness_%`) AS quartiles_liveness,
+NTILE (4) OVER (ORDER BY `speechiness_%`) AS quartiles_speechiness
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` )
+SELECT
+ a.* EXCEPT(track_id),
+IF
+ (quartiles.quartiles_streams = 4, "alto","bajo") AS cat_streams,
+IF
+ (quartiles.quartiles_bpm = 4, "alto","bajo") AS cat_bpm,
+IF
+ (quartiles.quartiles_dance = 4, "alto","bajo") AS cat_danceability,
+IF
+ (quartiles.quartiles_valence = 4, "alto","bajo") AS cat_valence,
+IF
+ (quartiles.quartiles_energy = 4, "alto","bajo") AS cat_energy,
+IF
+ (quartiles.quartiles_acoust = 4, "alto","bajo") AS cat_acoust,
+IF
+ (quartiles.quartiles_instrument = 4, "alto","bajo") AS cat_instrument,
+IF
+ (quartiles.quartiles_liveness = 4, "alto","bajo") AS cat_liveness,
+IF
+ (quartiles.quartiles_speechiness = 4, "alto","bajo") AS cat_speechiness,
+
+
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+LEFT JOIN
+ quartiles
+ON
+a.streams_numero=quartiles.streams_numero
+AND
+ a.`danceability_%` = quartiles.`danceability_%` AND
+ a.bpm = quartiles.bpm AND
+ a.`valence_%` = quartiles.`valence_%` AND
+ a.`energy_%` = quartiles.`energy_%` AND
+ a.`acousticness_%` = quartiles.`acousticness_%` AND
+ a.`instrumentalness_%` = quartiles.`instrumentalness_%` AND
+ a.`liveness_%` = quartiles.`liveness_%` AND
+ a.`speechiness_%` = quartiles.`speechiness_%`;
+
+
+
+
+
+
+----Query para calcular cuartiles y categorías todas las variables CASE WHEN, THEN, ELSE, AND
+WITH quartiles AS (
+ SELECT
+   streams_numero,
+   bpm,
+   `danceability_%`,
+   `valence_%`,
+   `energy_%`,
+   `acousticness_%`,
+   `instrumentalness_%`,
+   `liveness_%`,
+   `speechiness_%`,
+   NTILE(4) OVER (ORDER BY streams_numero) AS quartiles_streams,
+   NTILE(4) OVER (ORDER BY bpm) AS quartiles_bpm,
+   NTILE(4) OVER (ORDER BY `danceability_%`) AS quartiles_dance,
+   NTILE(4) OVER (ORDER BY `valence_%`) AS quartiles_valence,
+   NTILE(4) OVER (ORDER BY `energy_%`) AS quartiles_energy,
+   NTILE(4) OVER (ORDER BY `acousticness_%`) AS quartiles_acoust,
+   NTILE(4) OVER (ORDER BY `instrumentalness_%`) AS quartiles_instrument,
+   NTILE(4) OVER (ORDER BY `liveness_%`) AS quartiles_liveness,
+   NTILE(4) OVER (ORDER BY `speechiness_%`) AS quartiles_speechiness
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+)
+SELECT
+ a.* EXCEPT(track_id),
+ CASE WHEN quartiles.quartiles_streams = 4 THEN 'alto' ELSE 'bajo' END AS cat_streams,
+ CASE WHEN quartiles.quartiles_bpm = 4 THEN 'alto' ELSE 'bajo' END AS cat_bpm,
+ CASE WHEN quartiles.quartiles_dance = 4 THEN 'alto' ELSE 'bajo' END AS cat_danceability,
+ CASE WHEN quartiles.quartiles_valence = 4 THEN 'alto' ELSE 'bajo' END AS cat_valence,
+ CASE WHEN quartiles.quartiles_energy = 4 THEN 'alto' ELSE 'bajo' END AS cat_energy,
+ CASE WHEN quartiles.quartiles_acoust = 4 THEN 'alto' ELSE 'bajo' END AS cat_acoust,
+ CASE WHEN quartiles.quartiles_instrument = 4 THEN 'alto' ELSE 'bajo' END AS cat_instrument,
+ CASE WHEN quartiles.quartiles_liveness = 4 THEN 'alto' ELSE 'bajo' END AS cat_liveness,
+ CASE WHEN quartiles.quartiles_speechiness = 4 THEN 'alto' ELSE 'bajo' END AS cat_speechiness
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+LEFT JOIN
+ quartiles
+ON
+ a.streams_numero = quartiles.streams_numero AND
+ a.bpm = quartiles.bpm AND
+ a.`danceability_%` = quartiles.`danceability_%` AND
+ a.`valence_%` = quartiles.`valence_%` AND
+ a.`energy_%` = quartiles.`energy_%` AND
+ a.`acousticness_%` = quartiles.`acousticness_%` AND
+ a.`instrumentalness_%` = quartiles.`instrumentalness_%` AND
+ a.`liveness_%` = quartiles.`liveness_%` AND
+ a.`speechiness_%` = quartiles.`speechiness_%`;
+
+
+ --Query para calcular cuartiles de danceability
+WITH
+ quartiles AS(
+ SELECT
+   `danceability_%`,
+NTILE (4) OVER (ORDER BY `danceability_%`) AS quartiles_dance,
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+   )
+   SELECT
+   a.* EXCEPT(track_id),
+   quartiles.quartiles_dance
+   FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+ LEFT JOIN quartiles
+ ON a.`danceability_%` = quartiles.`danceability_%`;
+  --Query para categorías de daceability alto y bajo
+WITH
+ quartiles AS(
+ SELECT
+   `danceability_%`,
+   NTILE (4) OVER (ORDER BY `danceability_%`) AS quartiles_dance
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` )
+SELECT
+ a.* EXCEPT(track_id),
+IF
+ (quartiles.quartiles_dance = 4, "alto","bajo") AS cat_danceability,
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+LEFT JOIN
+ quartiles
+ON
+ a.`danceability_%` = quartiles.`danceability_%`;
+
+
+Cuartiles_streams
+--Query para calcular cuartiles de streams
+WITH
+ quartiles AS(
+ SELECT
+   streams_numero,
+   NTILE (4) OVER (ORDER BY streams_numero) AS quartiles_streams
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+   )
+   SELECT
+   a.* EXCEPT(track_id),
+   quartiles.quartiles_streams
+   FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+ LEFT JOIN quartiles
+ ON a.streams_numero = quartiles.streams_numero
+
+
+--Query para categorías de streams alto y bajo
+WITH
+ quartiles AS(
+ SELECT
+   streams_numero,
+   NTILE (4) OVER (ORDER BY streams_numero) AS quartiles_streams
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+   )
+   SELECT
+   a.* EXCEPT(track_id),
+   IF (quartiles.quartiles_streams = 4, "alto","bajo") AS cat_streams,
+   FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+ LEFT JOIN quartiles
+ ON a.streams_numero = quartiles.streams_numero
+
+
+--Query para calcular cuartiles bpm
+WITH
+ quartiles AS(
+ SELECT
+   bpm,
+   NTILE (4) OVER (ORDER BY bpm) AS quartiles_bpm
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+   )
+   SELECT
+   a.* EXCEPT(track_id),
+   quartiles.quartiles_bpm
+   FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+ LEFT JOIN quartiles
+ ON a.bpm = quartiles.bpm
+
+
+--Query para categorías de bpm alto y bajo
+WITH
+ quartiles AS(
+ SELECT
+  bpm,
+   NTILE (4) OVER (ORDER BY bpm) AS quartiles_bpm
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas`
+   )
+   SELECT
+   a.* EXCEPT(track_id),
+   IF (quartiles.quartiles_bpm = 4, "alto","bajo") AS cat_bpm,
+   FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+ LEFT JOIN quartiles
+ ON a.bpm = quartiles.bpm
+
+
+Max_min_avg_streams_numero
+--Query para calcular valor max, min,avg de streams_numero
+SELECT
+ MAX(streams_numero) AS max_streams_numero,
+ MIN(streams_numero) AS min_streams_numero,
+ AVG(streams_numero) AS avg_streams_numero,
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_streams_numero`
+
+
+Track_name_limpio
+--Query para eliminar caracteres especiales de track_name en track_in_spotify
+SELECT
+ track_name,
+ REGEXP_REPLACE(track_name,r'[^a-zA-Z0-9]', ' ') AS track_name_limpio,
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`;
+
+
+--Query para eliminar caracteres especiales de track_name y artist_s_name en track_in_spotify
+SELECT
+ track_name,
+ artist_s__name,
+ REGEXP_REPLACE(track_name,r'[^a-zA-Z0-9]', ' ') AS track_name_limpio,
+ REGEXP_REPLACE(artist_s__name,r'[^a-zA-Z0-9]', ' ') AS artist_s__name_limpio,
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`;
+
+
+Vistas
+Top_10_artistas
+--Query para calcular el top 10 de artistas con más canciones
+WITH canciones_por_artista AS (
+ SELECT
+   artist_s__name_limpio,
+   COUNT(track_id) AS total_canciones,
+   SUM(streams_numero) AS total_streams
+ FROM
+   `Dataset.view_plataformas`
+ WHERE
+   artist_count = 1
+ GROUP BY
+   artist_s__name_limpio
+)
+SELECT
+ *
+FROM
+ canciones_por_artista
+ORDER BY
+canciones_por_artista.total_canciones DESC
+LIMIT 10
+
+
+Top_10_canc_playlists
+--Query para calcular las canciones que están en más playlists
+SELECT
+TS.track_name_limpio,
+TS.artist_s__name_limpio,
+TS.streams_numero,
+TS.in_spotify_playlists + TC.in_apple_playlists + TC.in_deezer_playlists AS total_part_playlist
+FROM `proyecto2-hipotesis-lab.Dataset.view_spotify_limpia` AS TS
+LEFT JOIN
+`proyecto2-hipotesis-lab.Dataset.view_competition_limpia`AS TC
+ON
+TS.track_id = TC.track_id
+LEFT JOIN
+`proyecto2-hipotesis-lab.Dataset.view_technical_limpia` AS TI
+ON
+TS.track_id = TI.track_id
+ORDER BY total_part_playlist DESC
+LIMIT 10;
+
+
+Top_10_artistas_streams_alto
+--Query para calcular el top 10 de artistas con más streams y sus canciones
+WITH canciones_por_artista AS (
+ SELECT
+   artist_s__name_limpio,
+   COUNT(track_id) AS total_canciones,
+   SUM(streams_numero) AS total_streams
+ FROM
+   `Dataset.view_plataformas`
+ WHERE
+   artist_count = 1
+ GROUP BY
+   artist_s__name_limpio
+)
+SELECT
+ *
+FROM
+ canciones_por_artista
+ORDER BY
+canciones_por_artista.total_streams DESC
+LIMIT 10
+
+
+View_categorias_caract_canciones
+--Query para calcular cuartiles y categorías todas las variables usando IF
+WITH
+ quartiles AS(
+ SELECT
+   streams_numero,
+   bpm,
+   `danceability_%`,
+   `valence_%`,
+   `energy_%`,
+   `acousticness_%`,
+   `instrumentalness_%`,
+   `liveness_%`,
+   `speechiness_%`,
+NTILE (4) OVER (ORDER BY streams_numero) AS quartiles_streams,
+NTILE (4) OVER (ORDER BY bpm) AS quartiles_bpm,
+NTILE (4) OVER (ORDER BY `danceability_%`) AS quartiles_dance,
+NTILE (4) OVER (ORDER BY `valence_%`) AS quartiles_valence,
+NTILE (4) OVER (ORDER BY `energy_%`) AS quartiles_energy,
+NTILE (4) OVER (ORDER BY `acousticness_%`) AS quartiles_acoust,
+NTILE (4) OVER (ORDER BY `instrumentalness_%`) AS quartiles_instrument,
+NTILE (4) OVER (ORDER BY `liveness_%`) AS quartiles_liveness,
+NTILE (4) OVER (ORDER BY `speechiness_%`) AS quartiles_speechiness
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_plataformas` )
+SELECT
+ a.* EXCEPT(track_id),
+IF
+ (quartiles.quartiles_streams = 4, "alto","bajo") AS c_Streams,
+IF
+ (quartiles.quartiles_bpm = 4, "alto","bajo") AS c_bpm,
+IF
+ (quartiles.quartiles_dance = 4, "alto","bajo") AS c_Danceability,
+IF
+ (quartiles.quartiles_valence = 4, "alto","bajo") AS c_Valence,
+IF
+ (quartiles.quartiles_energy = 4, "alto","bajo") AS c_Energy,
+IF
+ (quartiles.quartiles_acoust = 4, "alto","bajo") AS c_Acousticness,
+IF
+ (quartiles.quartiles_instrument = 4, "alto","bajo") AS c_Instrumentless,
+IF
+ (quartiles.quartiles_liveness = 4, "alto","bajo") AS c_Liveness,
+IF
+ (quartiles.quartiles_speechiness = 4, "alto","bajo") AS c_Speechiness,
+
+
+FROM
+ `proyecto2-hipotesis-lab.Dataset.view_plataformas` AS a
+LEFT JOIN
+ quartiles
+ON
+a.streams_numero=quartiles.streams_numero
+AND
+ a.`danceability_%` = quartiles.`danceability_%` AND
+ a.bpm = quartiles.bpm AND
+ a.`valence_%` = quartiles.`valence_%` AND
+ a.`energy_%` = quartiles.`energy_%` AND
+ a.`acousticness_%` = quartiles.`acousticness_%` AND
+ a.`instrumentalness_%` = quartiles.`instrumentalness_%` AND
+ a.`liveness_%` = quartiles.`liveness_%` AND
+ a.`speechiness_%` = quartiles.`speechiness_%`;
+
+
+View_competition_limpia
+--Query track_competition limpia
+SELECT *
+FROM `proyecto2-hipotesis-lab.Dataset.track_in_competition`;
+
+
+View_hipotesis4
+--Query para calcular el total de canciones por artista y los streams totales
+WITH canciones_por_artista AS (
+ SELECT
+   artist_s__name_limpio,
+   COUNT(track_id) AS total_canciones,
+   SUM(streams_numero) AS total_streams
+ FROM
+   `Dataset.view_plataformas`
+ WHERE
+   artist_count = 1
+ GROUP BY
+   artist_s__name_limpio
+)
+SELECT
+ *
+FROM
+ canciones_por_artista
+ORDER BY
+ artist_s__name_limpio ASC
+
+
+View_plataformas
+--Query para unir tablas spotify_limpia, track_in_competition_limpia y track_in_technical_info_limpia
+SELECT
+TS.track_id,
+TS.track_name_limpio,
+TS.artist_s__name_limpio,
+TS.artist_count,
+TS.released,
+TS.released_year,
+TS.released_month,
+TS.released_day,
+TS.in_spotify_playlists,
+TS.in_spotify_charts,
+TS.streams_numero,
+TC.in_apple_playlists,
+TC.in_apple_charts,
+TC.in_deezer_playlists,
+TC.in_deezer_charts,
+TC.in_shazam_charts,
+TI.bpm,
+TI.`danceability_%`,
+TI.`valence_%`,
+TI.`energy_%`,
+TI.`acousticness_%`,
+TI.`instrumentalness_%`,
+TI.`liveness_%`,
+TI.`speechiness_%`,
+TS.in_spotify_playlists + TC.in_apple_playlists + TC.in_deezer_playlists AS total_part_playlist
+FROM `proyecto2-hipotesis-lab.Dataset.view_spotify_limpia` AS TS
+LEFT JOIN
+`proyecto2-hipotesis-lab.Dataset.view_competition_limpia`AS TC
+ON
+TS.track_id = TC.track_id
+LEFT JOIN
+`proyecto2-hipotesis-lab.Dataset.view_technical_limpia` AS TI
+ON
+TS.track_id = TI.track_id;
+
+
+View_spotify_limpia
+--Query para tabla con datos limpios track_in_spotify
+SELECT
+ track_id,
+ REGEXP_REPLACE(track_name,r'[^a-zA-Z0-9]', ' ') AS track_name_limpio,
+ REGEXP_REPLACE(artist_s__name,r'[^a-zA-Z0-9]', ' ') AS artist_s__name_limpio,
+ artist_count,
+ released_year,
+ released_month,
+ released_day,
+ CAST(CONCAT(CAST(released_year AS string),'-', LPAD(CAST(released_month AS string),2,'0'),'-', LPAD(CAST(released_day AS string),2,'0')) AS DATE) AS released,
+ in_spotify_playlists,
+ in_spotify_charts,
+ SAFE_CAST(streams AS INT64) AS streams_numero,
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`
+WHERE
+ streams NOT LIKE 'BPM%'
+ AND track_id != '1119309'
+ AND track_id != '4586215'
+ AND track_id != '5675634'
+ AND track_id != '4967469'
+ AND track_id != '3814670'
+ AND track_id != '5080031'
+ AND track_id != '7173596'
+ AND track_id != '8173823';
+
+
+View_streams_numero
+ #Query para cambiar el tipo de dato streams de STRING a INTERGER en toda la tabla
+SELECT
+ track_id,
+ track_name,
+ artist_s__name,
+ artist_count,
+ released_year,
+ released_month,
+ released_day,
+ in_spotify_playlists,
+ in_spotify_charts,
+ streams,
+ SAFE_CAST(streams AS INT64) AS streams_numero
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_in_spotify`;
+
+
+View_tabla_auxiliar
+--Query para calcular el total de canciones para el artista solo
+WITH
+ tot_canciones_artista AS(
+ SELECT
+   artist_s__name_limpio,
+   COUNT(*) AS cant_canciones
+ FROM
+   `proyecto2-hipotesis-lab.Dataset.view_spotify_limpia`
+ WHERE
+   artist_count = 1
+ GROUP BY
+   artist_s__name_limpio)
+SELECT
+ artist_s__name_limpio,
+ cant_canciones
+FROM
+ tot_canciones_artista
+ORDER BY
+cant_canciones DESC;
+
+
+View_tabla_caract_canciones_avrstreams
+--Query para calcular el promedio de streams por categoría de característica de canción
+WITH promedios AS (
+ SELECT
+   'c_bpm' AS caracteristica,
+   AVG(CASE WHEN c_bpm = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_bpm = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+ UNION ALL
+ SELECT
+   'c_Danceability' AS caracteristica,
+   AVG(CASE WHEN c_Danceability = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_Danceability = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+ UNION ALL
+ SELECT
+   'c_Valence' AS caracteristica,
+   AVG(CASE WHEN c_Valence = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_Valence = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+ UNION ALL
+ SELECT
+   'c_Energy' AS caracteristica,
+   AVG(CASE WHEN c_Energy = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_Energy = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+ UNION ALL
+ SELECT
+   'c_Acousticness' AS caracteristica,
+   AVG(CASE WHEN c_Acousticness = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_Acousticness = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+ UNION ALL
+ SELECT
+   'c_Instrumentless' AS caracteristica,
+   AVG(CASE WHEN c_Instrumentless = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_Instrumentless = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+ UNION ALL
+ SELECT
+   'c_Liveness' AS caracteristica,
+   AVG(CASE WHEN c_Liveness = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_Liveness = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+ UNION ALL
+ SELECT
+   'c_Speechiness' AS caracteristica,
+   AVG(CASE WHEN c_Speechiness = 'bajo' THEN streams_numero END) AS promedio_bajo,
+   AVG(CASE WHEN c_Speechiness = 'alto' THEN streams_numero END) AS promedio_alto
+ FROM `proyecto2-hipotesis-lab.Dataset.view_categorias_caract_canciones`
+)
+SELECT
+ caracteristica,
+ promedio_bajo,
+ promedio_alto
+FROM
+ promedios
+ORDER BY
+ caracteristica;
+
+
+View_technical_limpia
+--Query track_technical_info limpia
+SELECT
+*
+EXCEPT(key, mode)
+FROM `proyecto2-hipotesis-lab.Dataset.track_technical_info`;
+
+
+View_valores_fuera_alcance
+--Query para excluir valores fuera de alcance track_technical
+SELECT
+ * EXCEPT (KEY,
+   mode)
+FROM
+ `proyecto2-hipotesis-lab.Dataset.track_technical_info`
